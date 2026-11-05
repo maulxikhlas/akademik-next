@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 const menu = [
   { href: "/", label: "Home" },
   { href: "/profile", label: "Profil" },
-  { href: "/students", label: "Mahasiswa" },
+  { href: "/mahasiswa", label: "Mahasiswa" },
   { href: "/courses", label: "Mata Kuliah" },
   { href: "/nilai", label: "Nilai" },
+  { href: "/prodi", label: "Prodi" },
 ];
 
 export default function Navbar() {

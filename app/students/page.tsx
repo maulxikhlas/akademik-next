@@ -20,12 +20,12 @@ const daftarMahasiswa: Mahasiswa[] = [
     nim: "258320711006",
     nama: "Rahimin",
     programStudi: "Pendidikan Teknologi Informasi",
-    semester: 5,
-    ipk: 3.75,
+    semester: 3,
+    ipk: 3.50,
     jenisKelamin: "Laki-laki",
   },
   {
-    nim: "258320711003",
+    nim: "258320711004",
     nama: "Windu Novelia",
     programStudi: "Pendidikan Teknologi Informasi",
     semester: 3,
@@ -33,9 +33,9 @@ const daftarMahasiswa: Mahasiswa[] = [
     jenisKelamin: "Perempuan",
   },
   {
-    nim: "IF24001",
-    nama: "Citra Lestari",
-    programStudi: "Informatika",
+    nim: "258320711003",
+    nama: "Dina Gusva Riani",
+    programStudi: "Pendidikan Teknologi Informasi",
     semester: 3,
     ipk: 3.88,
     jenisKelamin: "Perempuan",
@@ -71,18 +71,18 @@ export default function StudentsPage() {
     <main className="space-y-6">
       <section className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="mt-1 text-2xl font-bold sm:text-3xl text-gray-900">Sistem Informasi Akademik - Data Mahasiswa</h1>
-          <p className="mt-2 text-sm text-gray-500">Daftar mahasiswa yang terdaftar pada aplikasi.</p>
+          <h1 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">Sistem Informasi Akademik - Data Mahasiswa</h1>
+          <p className="mt-2 text-sm text-slate-500">Daftar mahasiswa yang terdaftar pada aplikasi.</p>
         </div>
-        <p className="rounded-lg bg-blue-50 px-4 py-2 text-sm font-medium text-blue-800">
+        <p className="rounded-lg bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-800">
           Total: {daftarMahasiswa.length} mahasiswa
         </p>
       </section>
 
-      <section className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <section className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="overflow-x-auto">
           <table className="min-w-[900px] w-full text-left text-sm">
-            <thead className="bg-gray-100 text-xs uppercase tracking-wide text-gray-600">
+            <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
                 <th className="px-5 py-4">NIM</th>
                 <th className="px-5 py-4">Nama</th>
@@ -93,17 +93,17 @@ export default function StudentsPage() {
                 <th className="px-5 py-4">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-slate-100">
               {daftarMahasiswa.map((mhs) => (
-                <tr key={mhs.nim} className="transition hover:bg-blue-50">
-                  <td className="whitespace-nowrap px-5 py-4 font-medium text-gray-900">{mhs.nim}</td>
-                  <td className="whitespace-nowrap px-5 py-4">{mhs.nama}</td>
-                  <td className="px-5 py-4">{mhs.programStudi}</td>
-                  <td className="px-5 py-4">{mhs.semester}</td>
+                <tr key={mhs.nim} className="transition hover:bg-indigo-50">
+                  <td className="whitespace-nowrap px-5 py-4 font-medium text-slate-900">{mhs.nim}</td>
+                  <td className="whitespace-nowrap px-5 py-4 text-slate-800">{mhs.nama}</td>
+                  <td className="px-5 py-4 text-slate-700">{mhs.programStudi}</td>
+                  <td className="px-5 py-4 text-slate-700">{mhs.semester}</td>
                   <td className="px-5 py-4">
                     <span className={
                       mhs.ipk >= 3.75 ? "rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800" :
-                      mhs.ipk >= 3.50 ? "rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-800" :
+                      mhs.ipk >= 3.50 ? "rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-800" :
                       "rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800"
                     }>
                       {mhs.ipk.toFixed(2)}
@@ -131,7 +131,7 @@ export default function StudentsPage() {
           </table>
         </div>
       </section>
-      <p className="text-xs text-gray-500">Geser tabel ke samping jika dibuka pada layar kecil.</p>
+      <p className="text-xs text-slate-500">Geser tabel ke samping jika dibuka pada layar kecil.</p>
     </main>
-  );  
+  );
 }

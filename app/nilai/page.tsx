@@ -76,15 +76,15 @@ export default function NilaiPage() {
     <main className="space-y-6">
       <section className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="mt-1 text-2xl font-bold sm:text-3xl text-gray-900">Data Nilai Mahasiswa</h1>
-          <p className="mt-2 text-sm text-gray-500">Rekapitulasi perhitungan nilai akhir.</p>
+          <h1 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">Data Nilai Mahasiswa</h1>
+          <p className="mt-2 text-sm text-slate-500">Rekapitulasi perhitungan nilai akhir.</p>
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <section className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="overflow-x-auto">
           <table className="min-w-[900px] w-full text-left text-sm">
-            <thead className="bg-gray-100 text-xs uppercase tracking-wide text-gray-600">
+            <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
                 <th className="px-5 py-4">Tahun</th>
                 <th className="px-5 py-4">NIM</th>
@@ -97,35 +97,35 @@ export default function NilaiPage() {
                 <th className="px-5 py-4">Keterangan</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-slate-100">
               {daftarNilai.map((data, index) => {
                 // Poin 9: Rumus Nilai Akhir
                 const nilaiAkhir = (0.20 * data.tugas) + (0.35 * data.uts) + (0.45 * data.uas);
-                
+
                 // Poin 10: Logika Keterangan
                 let keterangan = "";
                 let styleKeterangan = "";
-                
+
                 if (nilaiAkhir >= 85) {
                   keterangan = "Terpuji";
                   styleKeterangan = "bg-green-100 text-green-800";
                 } else if (nilaiAkhir >= 65) {
                   keterangan = "Sangat Memuaskan";
-                  styleKeterangan = "bg-blue-100 text-blue-800";
+                  styleKeterangan = "bg-indigo-100 text-indigo-800";
                 } else {
                   keterangan = "Ulang Lagi";
                   styleKeterangan = "bg-red-100 text-red-800";
                 }
 
                 return (
-                  <tr key={index} className="transition hover:bg-blue-50">
-                    <td className="whitespace-nowrap px-5 py-4">{data.tahun}</td>
-                    <td className="whitespace-nowrap px-5 py-4 font-medium text-gray-900">{data.nim}</td>
-                    <td className="whitespace-nowrap px-5 py-4">{data.nama}</td>
-                    <td className="px-5 py-4">{data.tugas}</td>
-                    <td className="px-5 py-4">{data.uts}</td>
-                    <td className="px-5 py-4">{data.uas}</td>
-                    <td className="px-5 py-4 font-bold text-gray-900">
+                  <tr key={index} className="transition hover:bg-indigo-50">
+                    <td className="whitespace-nowrap px-5 py-4 text-slate-700">{data.tahun}</td>
+                    <td className="whitespace-nowrap px-5 py-4 font-medium text-slate-900">{data.nim}</td>
+                    <td className="whitespace-nowrap px-5 py-4 text-slate-800">{data.nama}</td>
+                    <td className="px-5 py-4 text-slate-700">{data.tugas}</td>
+                    <td className="px-5 py-4 text-slate-700">{data.uts}</td>
+                    <td className="px-5 py-4 text-slate-700">{data.uas}</td>
+                    <td className="px-5 py-4 font-bold text-slate-900">
                       {nilaiAkhir.toFixed(2)}
                     </td>
                     <td className="px-5 py-4">
